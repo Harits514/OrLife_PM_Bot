@@ -60,10 +60,10 @@ def send_message(text, chat_id):
 
 
 def main():
-    last_update_id = None
-    now=datetime.datetime.now()
-    hour=now.hour
-    while True:
+	last_update_id = None
+	now=datetime.datetime.now()
+	hour=now.hour
+	while True:
 		today=now.strftime("%A").lower()
 		if (today=="sunday" or today=="saturday" or today=="friday" or today=="thursday") and hour<=22 and hour<=now.hour:
 			updates = get_updates(last_update_id)
@@ -71,7 +71,6 @@ def main():
 				hour=hour+1
 				last_update_id = get_last_update_id(updates) + 1
 				echo_all(updates)
-				
 			time.sleep(0.5)
 
 
